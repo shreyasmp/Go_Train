@@ -47,7 +47,7 @@ fun DepartureCardHeader(
             verticalArrangement = Arrangement.SpaceEvenly
         ) {
             DrawComposableText(
-                content = "${departureTrip.service} ($lastStopName GO)",
+                content = "${departureTrip.service} ($lastStopName)",
                 start = 0.dp,
                 top = 0.dp,
                 end = 0.dp,

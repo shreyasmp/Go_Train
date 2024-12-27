@@ -6,7 +6,5 @@
     <string name="title_union_departures">Departures</string>
     <string name="title_price">Price</string>
     <string name="title_go_fare">Go Fare Pricing</string>
-    <string name="no_schedule_error_message">No Scheduled Trains, right now</string>
     <string name="union_departures">Go Union Departures</string>
-    <string name="no_departure_info">No Union Departure Info Available, right now</string>
 </resources>

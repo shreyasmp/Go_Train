@@ -116,9 +116,16 @@ dependencies {
     testImplementation(libs.mockito.inline)
     testImplementation(libs.mockito.kotlin)
     testImplementation(libs.coroutine.test)
+    testImplementation(libs.androidx.arch.core.testing)
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.espresso.intents)
+    androidTestImplementation(libs.androidx.espresso.contrib)
+    androidTestImplementation(libs.androidx.espresso.idling.resources)
     androidTestImplementation(libs.androidx.testing)
     androidTestImplementation(libs.compose.ui.android.tests)
+    androidTestImplementation(libs.mockito.core)
+    androidTestImplementation(libs.mockito.inline)
+    androidTestImplementation(libs.mockito.kotlin)
 }

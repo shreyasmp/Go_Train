@@ -54,7 +54,7 @@ class MetrolinxViewModel @Inject constructor(
                         withContext(Dispatchers.Main) {
                             isLoading.value = false
                             isError.value = true
-                            _metroLinxErrorResponse.value = result.code
+                            _metroLinxErrorResponse.value = NO_TRAIN_INFO_MESSAGE
                         }
                     }
                 }
@@ -85,7 +85,7 @@ class MetrolinxViewModel @Inject constructor(
                         withContext(Dispatchers.Main) {
                             isLoading.value = false
                             isError.value = true
-                            _metroLinxErrorResponse.value = result.code
+                            _metroLinxErrorResponse.value = NO_DEPARTURE_INFO_MESSAGE
                         }
                     }
                 }
@@ -99,5 +99,12 @@ class MetrolinxViewModel @Inject constructor(
         _metroLinxErrorResponse.value = null
         isLoading.value = false
         isError.value = false
+    }
+
+    private companion object {
+        const val NO_TRAIN_INFO_MESSAGE =
+            "No Scheduled Trains, right now. Pull to Refresh or check back later"
+        const val NO_DEPARTURE_INFO_MESSAGE =
+            "No Union Departure Info Available, right now. Pull to Refresh or check back later"
     }
 }

@@ -32,6 +32,7 @@ fun DeparturesScreen(
     val metroLinxResponse by viewModel.metroLinxResponse.observeAsState()
     val isLoading by viewModel.isLoading
     val isError by viewModel.isError
+    val metroLinxErrorResponse by viewModel.metroLinxErrorResponse.observeAsState()
     val pullRefreshState = rememberPullRefreshState(
         refreshing = isLoading,
         onRefresh = { viewModel.fetchAllGoTrainDeparturesFromUnion() }
@@ -54,7 +55,9 @@ fun DeparturesScreen(
         },
         content = { padding ->
             if (isError) {
-                ShowErrorMessage(errorMessage = stringResource(R.string.no_departure_info))
+                metroLinxErrorResponse?.let { errorMessage ->
+                    ShowErrorMessage(errorMessage = errorMessage)
+                }
             } else {
                 if (isLoading) {
                     ShowCircularProgressIndicator()

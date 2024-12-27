@@ -36,6 +36,8 @@ object MetrolinxUtility {
             "AD" -> "AllanDale Waterfront GO"
             "NI" -> "Niagara Falls GO"
             "OA" -> "Oakville GO"
+            "KI" -> "Kitchener GO"
+            "BE" -> "Bramalea GO"
             else -> "Unknown Stop Code"
         }
 
