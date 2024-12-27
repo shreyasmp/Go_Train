@@ -51,15 +51,7 @@ This project is a Go Train Schedule application developed using Jetpack Compose 
 - Jetpack Compose
 - Coil for image loading
 - Navigation component for Compose
-
-## Contributing
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Commit your changes (`git commit -m 'Add some feature'`).
-5. Push to the branch (`git push origin feature-branch`).
-6. Open a pull request.
+- Flow and Coroutines for async programming
 
 ## License
 
