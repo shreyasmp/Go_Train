@@ -13,6 +13,8 @@ This project is a Go Train Schedule application developed using Jetpack Compose 
 
 - Fare Pricing tab
 - Unit Tests
+- UI/UX changes or fixes on Font
+- Colour / theme ? 
 
 ## Screenshots
 
