@@ -1,0 +1,1905 @@
+{
+  "Metadata": {
+    "TimeStamp": "2024-12-26 16:34:33",
+    "ErrorCode": "200",
+    "ErrorMessage": "OK"
+  },
+  "AllDepartures": {
+    "Trip": [
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "1027",
+        "Platform": "-",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 17:14:00",
+        "Stops": [
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Mimico",
+            "Code": null
+          },
+          {
+            "Name": "Long Branch",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Clarkson",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          },
+          {
+            "Name": "Bronte",
+            "Code": null
+          },
+          {
+            "Name": "Appleby",
+            "Code": null
+          },
+          {
+            "Name": "Burlington",
+            "Code": null
+          },
+          {
+            "Name": "Aldershot",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "1029",
+        "Platform": "-",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 18:14:00",
+        "Stops": [
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Mimico",
+            "Code": null
+          },
+          {
+            "Name": "Long Branch",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Clarkson",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          },
+          {
+            "Name": "Bronte",
+            "Code": null
+          },
+          {
+            "Name": "Appleby",
+            "Code": null
+          },
+          {
+            "Name": "Burlington",
+            "Code": null
+          },
+          {
+            "Name": "Aldershot",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "1031",
+        "Platform": "-",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 19:14:00",
+        "Stops": [
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Mimico",
+            "Code": null
+          },
+          {
+            "Name": "Long Branch",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Clarkson",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          },
+          {
+            "Name": "Bronte",
+            "Code": null
+          },
+          {
+            "Name": "Appleby",
+            "Code": null
+          },
+          {
+            "Name": "Burlington",
+            "Code": null
+          },
+          {
+            "Name": "Aldershot",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "1033",
+        "Platform": "-",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 20:14:00",
+        "Stops": [
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Mimico",
+            "Code": null
+          },
+          {
+            "Name": "Long Branch",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Clarkson",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          },
+          {
+            "Name": "Bronte",
+            "Code": null
+          },
+          {
+            "Name": "Appleby",
+            "Code": null
+          },
+          {
+            "Name": "Burlington",
+            "Code": null
+          },
+          {
+            "Name": "Aldershot",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "1127",
+        "Platform": "-",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 17:29:00",
+        "Stops": [
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Mimico",
+            "Code": null
+          },
+          {
+            "Name": "Long Branch",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Clarkson",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "1129",
+        "Platform": "-",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 18:29:00",
+        "Stops": [
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Mimico",
+            "Code": null
+          },
+          {
+            "Name": "Long Branch",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Clarkson",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "1131",
+        "Platform": "-",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 19:29:00",
+        "Stops": [
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Mimico",
+            "Code": null
+          },
+          {
+            "Name": "Long Branch",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Clarkson",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "1133",
+        "Platform": "-",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 20:29:00",
+        "Stops": [
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Mimico",
+            "Code": null
+          },
+          {
+            "Name": "Long Branch",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Clarkson",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "1325",
+        "Platform": "-",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 16:59:00",
+        "Stops": [
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Mimico",
+            "Code": null
+          },
+          {
+            "Name": "Long Branch",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Clarkson",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "1327",
+        "Platform": "-",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 17:59:00",
+        "Stops": [
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Mimico",
+            "Code": null
+          },
+          {
+            "Name": "Long Branch",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Clarkson",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "1329",
+        "Platform": "-",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 18:59:00",
+        "Stops": [
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Mimico",
+            "Code": null
+          },
+          {
+            "Name": "Long Branch",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Clarkson",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "1331",
+        "Platform": "-",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 19:59:00",
+        "Stops": [
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Mimico",
+            "Code": null
+          },
+          {
+            "Name": "Long Branch",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Clarkson",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Proceed / Avancez",
+        "TripNumber": "1725",
+        "Platform": "7 & 8",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 16:44:00",
+        "Stops": [
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Mimico",
+            "Code": null
+          },
+          {
+            "Name": "Long Branch",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Clarkson",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          },
+          {
+            "Name": "Bronte",
+            "Code": null
+          },
+          {
+            "Name": "Appleby",
+            "Code": null
+          },
+          {
+            "Name": "Burlington",
+            "Code": null
+          },
+          {
+            "Name": "Aldershot",
+            "Code": null
+          },
+          {
+            "Name": "West Harbour",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "1727",
+        "Platform": "-",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 17:44:00",
+        "Stops": [
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Mimico",
+            "Code": null
+          },
+          {
+            "Name": "Long Branch",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Clarkson",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          },
+          {
+            "Name": "Bronte",
+            "Code": null
+          },
+          {
+            "Name": "Appleby",
+            "Code": null
+          },
+          {
+            "Name": "Burlington",
+            "Code": null
+          },
+          {
+            "Name": "Aldershot",
+            "Code": null
+          },
+          {
+            "Name": "West Harbour",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "1729",
+        "Platform": "-",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 18:44:00",
+        "Stops": [
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Mimico",
+            "Code": null
+          },
+          {
+            "Name": "Long Branch",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Clarkson",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          },
+          {
+            "Name": "Bronte",
+            "Code": null
+          },
+          {
+            "Name": "Appleby",
+            "Code": null
+          },
+          {
+            "Name": "Burlington",
+            "Code": null
+          },
+          {
+            "Name": "Aldershot",
+            "Code": null
+          },
+          {
+            "Name": "West Harbour",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "1731",
+        "Platform": "-",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 19:44:00",
+        "Stops": [
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Mimico",
+            "Code": null
+          },
+          {
+            "Name": "Long Branch",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Clarkson",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          },
+          {
+            "Name": "Bronte",
+            "Code": null
+          },
+          {
+            "Name": "Appleby",
+            "Code": null
+          },
+          {
+            "Name": "Burlington",
+            "Code": null
+          },
+          {
+            "Name": "Aldershot",
+            "Code": null
+          },
+          {
+            "Name": "West Harbour",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "1979",
+        "Platform": "-",
+        "Service": "Lakeshore West",
+        "ServiceType": "T",
+        "Time": "2024-12-26 18:21:00",
+        "Stops": [
+          {
+            "Name": "Express To",
+            "Code": null
+          },
+          {
+            "Name": "Exhibition",
+            "Code": null
+          },
+          {
+            "Name": "Port Credit",
+            "Code": null
+          },
+          {
+            "Name": "Oakville",
+            "Code": null
+          },
+          {
+            "Name": "Burlington",
+            "Code": null
+          },
+          {
+            "Name": "Aldershot",
+            "Code": null
+          },
+          {
+            "Name": "St. Catharines",
+            "Code": null
+          },
+          {
+            "Name": "Niagara Falls",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "3525",
+        "Platform": "-",
+        "Service": "Kitchener",
+        "ServiceType": "T",
+        "Time": "2024-12-26 16:51:00",
+        "Stops": [
+          {
+            "Name": "Bloor",
+            "Code": null
+          },
+          {
+            "Name": "Weston",
+            "Code": null
+          },
+          {
+            "Name": "Malton",
+            "Code": null
+          },
+          {
+            "Name": "Bramalea",
+            "Code": null
+          },
+          {
+            "Name": "Brampton Innovation District GO",
+            "Code": null
+          },
+          {
+            "Name": "Mount Pleasant",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "3527",
+        "Platform": "-",
+        "Service": "Kitchener",
+        "ServiceType": "T",
+        "Time": "2024-12-26 17:51:00",
+        "Stops": [
+          {
+            "Name": "Bloor",
+            "Code": null
+          },
+          {
+            "Name": "Weston",
+            "Code": null
+          },
+          {
+            "Name": "Malton",
+            "Code": null
+          },
+          {
+            "Name": "Bramalea",
+            "Code": null
+          },
+          {
+            "Name": "Brampton Innovation District GO",
+            "Code": null
+          },
+          {
+            "Name": "Mount Pleasant",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "3529",
+        "Platform": "-",
+        "Service": "Kitchener",
+        "ServiceType": "T",
+        "Time": "2024-12-26 18:51:00",
+        "Stops": [
+          {
+            "Name": "Bloor",
+            "Code": null
+          },
+          {
+            "Name": "Weston",
+            "Code": null
+          },
+          {
+            "Name": "Malton",
+            "Code": null
+          },
+          {
+            "Name": "Bramalea",
+            "Code": null
+          },
+          {
+            "Name": "Brampton Innovation District GO",
+            "Code": null
+          },
+          {
+            "Name": "Mount Pleasant",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "3531",
+        "Platform": "-",
+        "Service": "Kitchener",
+        "ServiceType": "T",
+        "Time": "2024-12-26 19:51:00",
+        "Stops": [
+          {
+            "Name": "Bloor",
+            "Code": null
+          },
+          {
+            "Name": "Weston",
+            "Code": null
+          },
+          {
+            "Name": "Malton",
+            "Code": null
+          },
+          {
+            "Name": "Bramalea",
+            "Code": null
+          },
+          {
+            "Name": "Brampton Innovation District GO",
+            "Code": null
+          },
+          {
+            "Name": "Mount Pleasant",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "6325",
+        "Platform": "-",
+        "Service": "Barrie",
+        "ServiceType": "T",
+        "Time": "2024-12-26 16:54:00",
+        "Stops": [
+          {
+            "Name": "Downsview Park",
+            "Code": null
+          },
+          {
+            "Name": "Rutherford",
+            "Code": null
+          },
+          {
+            "Name": "Maple",
+            "Code": null
+          },
+          {
+            "Name": "King City",
+            "Code": null
+          },
+          {
+            "Name": "Aurora",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "6329",
+        "Platform": "-",
+        "Service": "Barrie",
+        "ServiceType": "T",
+        "Time": "2024-12-26 18:54:00",
+        "Stops": [
+          {
+            "Name": "Downsview Park",
+            "Code": null
+          },
+          {
+            "Name": "Rutherford",
+            "Code": null
+          },
+          {
+            "Name": "Maple",
+            "Code": null
+          },
+          {
+            "Name": "King City",
+            "Code": null
+          },
+          {
+            "Name": "Aurora",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "6331",
+        "Platform": "-",
+        "Service": "Barrie",
+        "ServiceType": "T",
+        "Time": "2024-12-26 19:54:00",
+        "Stops": [
+          {
+            "Name": "Downsview Park",
+            "Code": null
+          },
+          {
+            "Name": "Rutherford",
+            "Code": null
+          },
+          {
+            "Name": "Maple",
+            "Code": null
+          },
+          {
+            "Name": "King City",
+            "Code": null
+          },
+          {
+            "Name": "Aurora",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "6927",
+        "Platform": "-",
+        "Service": "Barrie",
+        "ServiceType": "T",
+        "Time": "2024-12-26 17:54:00",
+        "Stops": [
+          {
+            "Name": "Downsview Park",
+            "Code": null
+          },
+          {
+            "Name": "Rutherford",
+            "Code": null
+          },
+          {
+            "Name": "Maple",
+            "Code": null
+          },
+          {
+            "Name": "King City",
+            "Code": null
+          },
+          {
+            "Name": "Aurora",
+            "Code": null
+          },
+          {
+            "Name": "Newmarket",
+            "Code": null
+          },
+          {
+            "Name": "East Gwillimbury",
+            "Code": null
+          },
+          {
+            "Name": "Bradford",
+            "Code": null
+          },
+          {
+            "Name": "Barrie South",
+            "Code": null
+          },
+          {
+            "Name": "Allandale Waterfront",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "7426",
+        "Platform": "-",
+        "Service": "Stouffville",
+        "ServiceType": "T",
+        "Time": "2024-12-26 17:11:00",
+        "Stops": [
+          {
+            "Name": "Kennedy",
+            "Code": null
+          },
+          {
+            "Name": "Agincourt",
+            "Code": null
+          },
+          {
+            "Name": "Milliken",
+            "Code": null
+          },
+          {
+            "Name": "Unionville",
+            "Code": null
+          },
+          {
+            "Name": "Centennial",
+            "Code": null
+          },
+          {
+            "Name": "Markham",
+            "Code": null
+          },
+          {
+            "Name": "Mount Joy",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "7428",
+        "Platform": "-",
+        "Service": "Stouffville",
+        "ServiceType": "T",
+        "Time": "2024-12-26 18:11:00",
+        "Stops": [
+          {
+            "Name": "Kennedy",
+            "Code": null
+          },
+          {
+            "Name": "Agincourt",
+            "Code": null
+          },
+          {
+            "Name": "Milliken",
+            "Code": null
+          },
+          {
+            "Name": "Unionville",
+            "Code": null
+          },
+          {
+            "Name": "Centennial",
+            "Code": null
+          },
+          {
+            "Name": "Markham",
+            "Code": null
+          },
+          {
+            "Name": "Mount Joy",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "7430",
+        "Platform": "-",
+        "Service": "Stouffville",
+        "ServiceType": "T",
+        "Time": "2024-12-26 19:11:00",
+        "Stops": [
+          {
+            "Name": "Kennedy",
+            "Code": null
+          },
+          {
+            "Name": "Agincourt",
+            "Code": null
+          },
+          {
+            "Name": "Milliken",
+            "Code": null
+          },
+          {
+            "Name": "Unionville",
+            "Code": null
+          },
+          {
+            "Name": "Centennial",
+            "Code": null
+          },
+          {
+            "Name": "Markham",
+            "Code": null
+          },
+          {
+            "Name": "Mount Joy",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "7432",
+        "Platform": "-",
+        "Service": "Stouffville",
+        "ServiceType": "T",
+        "Time": "2024-12-26 20:11:00",
+        "Stops": [
+          {
+            "Name": "Kennedy",
+            "Code": null
+          },
+          {
+            "Name": "Agincourt",
+            "Code": null
+          },
+          {
+            "Name": "Milliken",
+            "Code": null
+          },
+          {
+            "Name": "Unionville",
+            "Code": null
+          },
+          {
+            "Name": "Centennial",
+            "Code": null
+          },
+          {
+            "Name": "Markham",
+            "Code": null
+          },
+          {
+            "Name": "Mount Joy",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "9026",
+        "Platform": "-",
+        "Service": "Lakeshore East",
+        "ServiceType": "T",
+        "Time": "2024-12-26 17:05:00",
+        "Stops": [
+          {
+            "Name": "Danforth",
+            "Code": null
+          },
+          {
+            "Name": "Scarborough",
+            "Code": null
+          },
+          {
+            "Name": "Eglinton",
+            "Code": null
+          },
+          {
+            "Name": "Guildwood",
+            "Code": null
+          },
+          {
+            "Name": "Rouge Hill",
+            "Code": null
+          },
+          {
+            "Name": "Pickering",
+            "Code": null
+          },
+          {
+            "Name": "Ajax",
+            "Code": null
+          },
+          {
+            "Name": "Whitby",
+            "Code": null
+          },
+          {
+            "Name": "DC Oshawa GO",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "9028",
+        "Platform": "-",
+        "Service": "Lakeshore East",
+        "ServiceType": "T",
+        "Time": "2024-12-26 18:05:00",
+        "Stops": [
+          {
+            "Name": "Danforth",
+            "Code": null
+          },
+          {
+            "Name": "Scarborough",
+            "Code": null
+          },
+          {
+            "Name": "Eglinton",
+            "Code": null
+          },
+          {
+            "Name": "Guildwood",
+            "Code": null
+          },
+          {
+            "Name": "Rouge Hill",
+            "Code": null
+          },
+          {
+            "Name": "Pickering",
+            "Code": null
+          },
+          {
+            "Name": "Ajax",
+            "Code": null
+          },
+          {
+            "Name": "Whitby",
+            "Code": null
+          },
+          {
+            "Name": "DC Oshawa GO",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "9030",
+        "Platform": "-",
+        "Service": "Lakeshore East",
+        "ServiceType": "T",
+        "Time": "2024-12-26 19:05:00",
+        "Stops": [
+          {
+            "Name": "Danforth",
+            "Code": null
+          },
+          {
+            "Name": "Scarborough",
+            "Code": null
+          },
+          {
+            "Name": "Eglinton",
+            "Code": null
+          },
+          {
+            "Name": "Guildwood",
+            "Code": null
+          },
+          {
+            "Name": "Rouge Hill",
+            "Code": null
+          },
+          {
+            "Name": "Pickering",
+            "Code": null
+          },
+          {
+            "Name": "Ajax",
+            "Code": null
+          },
+          {
+            "Name": "Whitby",
+            "Code": null
+          },
+          {
+            "Name": "DC Oshawa GO",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "9032",
+        "Platform": "-",
+        "Service": "Lakeshore East",
+        "ServiceType": "T",
+        "Time": "2024-12-26 20:05:00",
+        "Stops": [
+          {
+            "Name": "Danforth",
+            "Code": null
+          },
+          {
+            "Name": "Scarborough",
+            "Code": null
+          },
+          {
+            "Name": "Eglinton",
+            "Code": null
+          },
+          {
+            "Name": "Guildwood",
+            "Code": null
+          },
+          {
+            "Name": "Rouge Hill",
+            "Code": null
+          },
+          {
+            "Name": "Pickering",
+            "Code": null
+          },
+          {
+            "Name": "Ajax",
+            "Code": null
+          },
+          {
+            "Name": "Whitby",
+            "Code": null
+          },
+          {
+            "Name": "DC Oshawa GO",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "9126",
+        "Platform": "-",
+        "Service": "Lakeshore East",
+        "ServiceType": "T",
+        "Time": "2024-12-26 17:20:00",
+        "Stops": [
+          {
+            "Name": "Danforth",
+            "Code": null
+          },
+          {
+            "Name": "Scarborough",
+            "Code": null
+          },
+          {
+            "Name": "Eglinton",
+            "Code": null
+          },
+          {
+            "Name": "Guildwood",
+            "Code": null
+          },
+          {
+            "Name": "Rouge Hill",
+            "Code": null
+          },
+          {
+            "Name": "Pickering",
+            "Code": null
+          },
+          {
+            "Name": "Ajax",
+            "Code": null
+          },
+          {
+            "Name": "Whitby",
+            "Code": null
+          },
+          {
+            "Name": "DC Oshawa GO",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "9128",
+        "Platform": "-",
+        "Service": "Lakeshore East",
+        "ServiceType": "T",
+        "Time": "2024-12-26 18:20:00",
+        "Stops": [
+          {
+            "Name": "Danforth",
+            "Code": null
+          },
+          {
+            "Name": "Scarborough",
+            "Code": null
+          },
+          {
+            "Name": "Eglinton",
+            "Code": null
+          },
+          {
+            "Name": "Guildwood",
+            "Code": null
+          },
+          {
+            "Name": "Rouge Hill",
+            "Code": null
+          },
+          {
+            "Name": "Pickering",
+            "Code": null
+          },
+          {
+            "Name": "Ajax",
+            "Code": null
+          },
+          {
+            "Name": "Whitby",
+            "Code": null
+          },
+          {
+            "Name": "DC Oshawa GO",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "9130",
+        "Platform": "-",
+        "Service": "Lakeshore East",
+        "ServiceType": "T",
+        "Time": "2024-12-26 19:20:00",
+        "Stops": [
+          {
+            "Name": "Danforth",
+            "Code": null
+          },
+          {
+            "Name": "Scarborough",
+            "Code": null
+          },
+          {
+            "Name": "Eglinton",
+            "Code": null
+          },
+          {
+            "Name": "Guildwood",
+            "Code": null
+          },
+          {
+            "Name": "Rouge Hill",
+            "Code": null
+          },
+          {
+            "Name": "Pickering",
+            "Code": null
+          },
+          {
+            "Name": "Ajax",
+            "Code": null
+          },
+          {
+            "Name": "Whitby",
+            "Code": null
+          },
+          {
+            "Name": "DC Oshawa GO",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "9132",
+        "Platform": "-",
+        "Service": "Lakeshore East",
+        "ServiceType": "T",
+        "Time": "2024-12-26 20:20:00",
+        "Stops": [
+          {
+            "Name": "Danforth",
+            "Code": null
+          },
+          {
+            "Name": "Scarborough",
+            "Code": null
+          },
+          {
+            "Name": "Eglinton",
+            "Code": null
+          },
+          {
+            "Name": "Guildwood",
+            "Code": null
+          },
+          {
+            "Name": "Rouge Hill",
+            "Code": null
+          },
+          {
+            "Name": "Pickering",
+            "Code": null
+          },
+          {
+            "Name": "Ajax",
+            "Code": null
+          },
+          {
+            "Name": "Whitby",
+            "Code": null
+          },
+          {
+            "Name": "DC Oshawa GO",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Proceed / Avancez",
+        "TripNumber": "9224",
+        "Platform": "11 & 12",
+        "Service": "Lakeshore East",
+        "ServiceType": "T",
+        "Time": "2024-12-26 16:35:00",
+        "Stops": [
+          {
+            "Name": "Danforth",
+            "Code": null
+          },
+          {
+            "Name": "Scarborough",
+            "Code": null
+          },
+          {
+            "Name": "Eglinton",
+            "Code": null
+          },
+          {
+            "Name": "Guildwood",
+            "Code": null
+          },
+          {
+            "Name": "Rouge Hill",
+            "Code": null
+          },
+          {
+            "Name": "Pickering",
+            "Code": null
+          },
+          {
+            "Name": "Ajax",
+            "Code": null
+          },
+          {
+            "Name": "Whitby",
+            "Code": null
+          },
+          {
+            "Name": "DC Oshawa GO",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "9226",
+        "Platform": "-",
+        "Service": "Lakeshore East",
+        "ServiceType": "T",
+        "Time": "2024-12-26 17:35:00",
+        "Stops": [
+          {
+            "Name": "Danforth",
+            "Code": null
+          },
+          {
+            "Name": "Scarborough",
+            "Code": null
+          },
+          {
+            "Name": "Eglinton",
+            "Code": null
+          },
+          {
+            "Name": "Guildwood",
+            "Code": null
+          },
+          {
+            "Name": "Rouge Hill",
+            "Code": null
+          },
+          {
+            "Name": "Pickering",
+            "Code": null
+          },
+          {
+            "Name": "Ajax",
+            "Code": null
+          },
+          {
+            "Name": "Whitby",
+            "Code": null
+          },
+          {
+            "Name": "DC Oshawa GO",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "9228",
+        "Platform": "-",
+        "Service": "Lakeshore East",
+        "ServiceType": "T",
+        "Time": "2024-12-26 18:35:00",
+        "Stops": [
+          {
+            "Name": "Danforth",
+            "Code": null
+          },
+          {
+            "Name": "Scarborough",
+            "Code": null
+          },
+          {
+            "Name": "Eglinton",
+            "Code": null
+          },
+          {
+            "Name": "Guildwood",
+            "Code": null
+          },
+          {
+            "Name": "Rouge Hill",
+            "Code": null
+          },
+          {
+            "Name": "Pickering",
+            "Code": null
+          },
+          {
+            "Name": "Ajax",
+            "Code": null
+          },
+          {
+            "Name": "Whitby",
+            "Code": null
+          },
+          {
+            "Name": "DC Oshawa GO",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "9230",
+        "Platform": "-",
+        "Service": "Lakeshore East",
+        "ServiceType": "T",
+        "Time": "2024-12-26 19:35:00",
+        "Stops": [
+          {
+            "Name": "Danforth",
+            "Code": null
+          },
+          {
+            "Name": "Scarborough",
+            "Code": null
+          },
+          {
+            "Name": "Eglinton",
+            "Code": null
+          },
+          {
+            "Name": "Guildwood",
+            "Code": null
+          },
+          {
+            "Name": "Rouge Hill",
+            "Code": null
+          },
+          {
+            "Name": "Pickering",
+            "Code": null
+          },
+          {
+            "Name": "Ajax",
+            "Code": null
+          },
+          {
+            "Name": "Whitby",
+            "Code": null
+          },
+          {
+            "Name": "DC Oshawa GO",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "9324",
+        "Platform": "-",
+        "Service": "Lakeshore East",
+        "ServiceType": "T",
+        "Time": "2024-12-26 16:50:00",
+        "Stops": [
+          {
+            "Name": "Danforth",
+            "Code": null
+          },
+          {
+            "Name": "Scarborough",
+            "Code": null
+          },
+          {
+            "Name": "Eglinton",
+            "Code": null
+          },
+          {
+            "Name": "Guildwood",
+            "Code": null
+          },
+          {
+            "Name": "Rouge Hill",
+            "Code": null
+          },
+          {
+            "Name": "Pickering",
+            "Code": null
+          },
+          {
+            "Name": "Ajax",
+            "Code": null
+          },
+          {
+            "Name": "Whitby",
+            "Code": null
+          },
+          {
+            "Name": "DC Oshawa GO",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "9326",
+        "Platform": "-",
+        "Service": "Lakeshore East",
+        "ServiceType": "T",
+        "Time": "2024-12-26 17:50:00",
+        "Stops": [
+          {
+            "Name": "Danforth",
+            "Code": null
+          },
+          {
+            "Name": "Scarborough",
+            "Code": null
+          },
+          {
+            "Name": "Eglinton",
+            "Code": null
+          },
+          {
+            "Name": "Guildwood",
+            "Code": null
+          },
+          {
+            "Name": "Rouge Hill",
+            "Code": null
+          },
+          {
+            "Name": "Pickering",
+            "Code": null
+          },
+          {
+            "Name": "Ajax",
+            "Code": null
+          },
+          {
+            "Name": "Whitby",
+            "Code": null
+          },
+          {
+            "Name": "DC Oshawa GO",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "9328",
+        "Platform": "-",
+        "Service": "Lakeshore East",
+        "ServiceType": "T",
+        "Time": "2024-12-26 18:50:00",
+        "Stops": [
+          {
+            "Name": "Danforth",
+            "Code": null
+          },
+          {
+            "Name": "Scarborough",
+            "Code": null
+          },
+          {
+            "Name": "Eglinton",
+            "Code": null
+          },
+          {
+            "Name": "Guildwood",
+            "Code": null
+          },
+          {
+            "Name": "Rouge Hill",
+            "Code": null
+          },
+          {
+            "Name": "Pickering",
+            "Code": null
+          },
+          {
+            "Name": "Ajax",
+            "Code": null
+          },
+          {
+            "Name": "Whitby",
+            "Code": null
+          },
+          {
+            "Name": "DC Oshawa GO",
+            "Code": null
+          }
+        ]
+      },
+      {
+        "Info": "Wait / Attendez",
+        "TripNumber": "9330",
+        "Platform": "-",
+        "Service": "Lakeshore East",
+        "ServiceType": "T",
+        "Time": "2024-12-26 19:50:00",
+        "Stops": [
+          {
+            "Name": "Danforth",
+            "Code": null
+          },
+          {
+            "Name": "Scarborough",
+            "Code": null
+          },
+          {
+            "Name": "Eglinton",
+            "Code": null
+          },
+          {
+            "Name": "Guildwood",
+            "Code": null
+          },
+          {
+            "Name": "Rouge Hill",
+            "Code": null
+          },
+          {
+            "Name": "Pickering",
+            "Code": null
+          },
+          {
+            "Name": "Ajax",
+            "Code": null
+          },
+          {
+            "Name": "Whitby",
+            "Code": null
+          },
+          {
+            "Name": "DC Oshawa GO",
+            "Code": null
+          }
+        ]
+      }
+    ]
+  }
+}

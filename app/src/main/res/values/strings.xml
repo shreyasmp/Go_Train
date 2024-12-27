@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Go Train</string>
+    <string name="home_app_title">Go Train Schedules</string>
+    <string name="title_home">Home</string>
+    <string name="title_info">Info</string>
+    <string name="title_union_departures">Departures</string>
+    <string name="title_price">Price</string>
+    <string name="title_go_fare">Go Fare Pricing</string>
+    <string name="no_schedule_error_message">No Scheduled Trains, right now</string>
+    <string name="union_departures">Go Union Departures</string>
+    <string name="no_departure_info">No Union Departure Info Available, right now</string>
+</resources>
