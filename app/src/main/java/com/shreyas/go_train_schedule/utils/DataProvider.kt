@@ -1,8 +1,11 @@
 package com.shreyas.go_train_schedule.utils
 
 import com.shreyas.go_train_schedule.models.DepartureTrip
+import com.shreyas.go_train_schedule.models.DepartureTrips
+import com.shreyas.go_train_schedule.models.MetrolinxResponse
 import com.shreyas.go_train_schedule.models.Stop
 import com.shreyas.go_train_schedule.models.Trip
+import com.shreyas.go_train_schedule.models.Trips
 
 object DataProvider {
 
@@ -118,4 +121,28 @@ object DataProvider {
     )
 
     val departureTrips = mutableListOf(departureTrip, departureTrip2)
+
+    val metroLinxResponse = MetrolinxResponse(
+        metadata = com.shreyas.go_train_schedule.models.Metadata(
+            timeStamp = "2024-12-26 16:34:33",
+            errorCode = "200",
+            errorMessage = "OK"
+        ),
+        trips = Trips(
+            trip = listOf(trip, trip2)
+        ),
+        allDepartures = null
+    )
+
+    val metroLinxResponse2 = MetrolinxResponse(
+        metadata = com.shreyas.go_train_schedule.models.Metadata(
+            timeStamp = "2024-12-26 16:34:33",
+            errorCode = "200",
+            errorMessage = "OK"
+        ),
+        trips = null,
+        allDepartures = DepartureTrips(
+            departureTrips = listOf(departureTrip, departureTrip2)
+        )
+    )
 }

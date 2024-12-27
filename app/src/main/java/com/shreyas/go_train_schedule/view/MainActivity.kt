@@ -11,9 +11,9 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DepartureBoard
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.PriceCheck
+import androidx.compose.material.icons.filled.Train
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
@@ -56,7 +56,7 @@ fun BottomNavigationBar(navController: NavHostController) {
         contentColor = Color.Black
     ) {
         BottomNavigationItem(
-            icon = { Icon(Icons.Default.Home, contentDescription = null) },
+            icon = { Icon(Icons.Default.Train, contentDescription = null) },
             label = { Text(stringResource(id = R.string.title_home)) },
             selected = false,
             onClick = { navController.navigate("home") }
