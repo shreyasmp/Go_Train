@@ -7,6 +7,7 @@ on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   pull_request:
     branches: [ "master" ]
+    types: [opened, synchronize, reopened]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -25,4 +26,4 @@ jobs:
       - name: Assign Reviewer
         uses: kentaro-m/auto-assign-action@v2.0.0
         with:
-          reviewers: '@shreyasmp'
+          reviewers: 'shreyasmp'
