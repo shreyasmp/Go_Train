@@ -5,8 +5,6 @@ name: Auto Assign Reviewer
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
-  push:
-    branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
 
@@ -18,8 +16,11 @@ jobs:
   # This workflow contains a single job called "build"
   assign-reviewer:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - name: Assign Reviewer
         uses: kentaro-m/auto-assign-action@v1.1.2
         with:
-          reviewers: 'shreyasmp'
+          reviewers: |
+            shreyasmp
