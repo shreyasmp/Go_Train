@@ -45,8 +45,13 @@ class MetrolinxViewModel @Inject constructor(
                     is ResultWrapper.SUCCESS -> {
                         withContext(Dispatchers.Main) {
                             isLoading.value = false
-                            isError.value = false
-                            _metroLinxResponse.value = result.value
+                            result.value?.trips?.let {
+                                isError.value = false
+                                _metroLinxResponse.value = result.value
+                            } ?: run {
+                                isError.value = true
+                                _metroLinxErrorResponse.value = NO_TRAIN_INFO_MESSAGE
+                            }
                         }
                     }
 
@@ -54,7 +59,7 @@ class MetrolinxViewModel @Inject constructor(
                         withContext(Dispatchers.Main) {
                             isLoading.value = false
                             isError.value = true
-                            _metroLinxErrorResponse.value = NO_TRAIN_INFO_MESSAGE
+                            _metroLinxErrorResponse.value = result.code
                         }
                     }
                 }
@@ -76,8 +81,13 @@ class MetrolinxViewModel @Inject constructor(
                     is ResultWrapper.SUCCESS -> {
                         withContext(Dispatchers.Main) {
                             isLoading.value = false
-                            isError.value = false
-                            _metroLinxResponse.value = result.value
+                            result.value?.allDepartures?.let {
+                                isError.value = false
+                                _metroLinxResponse.value = result.value
+                            } ?: run {
+                                isError.value = true
+                                _metroLinxErrorResponse.value = NO_DEPARTURE_INFO_MESSAGE
+                            }
                         }
                     }
 
@@ -85,7 +95,7 @@ class MetrolinxViewModel @Inject constructor(
                         withContext(Dispatchers.Main) {
                             isLoading.value = false
                             isError.value = true
-                            _metroLinxErrorResponse.value = NO_DEPARTURE_INFO_MESSAGE
+                            _metroLinxErrorResponse.value = result.code
                         }
                     }
                 }
