@@ -15,7 +15,7 @@ class MetrolinxUtilityTest {
     @Test
     fun testResolveFirstStopCode() {
         assertEquals("Union Station", MetrolinxUtility.resolveFirstStopCode("UN"))
-        assertEquals("Unknown Stop Code", MetrolinxUtility.resolveFirstStopCode("XX"))
+        assertEquals("Unknown Stop Code XX", MetrolinxUtility.resolveFirstStopCode("XX"))
     }
 
     @Test

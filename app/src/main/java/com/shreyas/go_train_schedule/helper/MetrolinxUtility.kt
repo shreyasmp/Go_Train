@@ -38,7 +38,8 @@ object MetrolinxUtility {
             "OA" -> "Oakville GO"
             "KI" -> "Kitchener GO"
             "BE" -> "Bramalea GO"
-            else -> "Unknown Stop Code"
+            "LI" -> "Old Elm GO"
+            else -> "Unknown Stop Code $firstStop"
         }
 
     fun convertTo12HourFormat(time24: String): String? {
