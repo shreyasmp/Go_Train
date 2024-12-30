@@ -12,4 +12,6 @@ data class MetrolinxResponse(
     val trips: Trips?,
     @SerializedName("AllDepartures")
     val allDepartures: DepartureTrips?,
+    @SerializedName("Stations")
+    val stations: Stations?,
 ) : Parcelable

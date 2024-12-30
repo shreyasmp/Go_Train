@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shreyas.go_train_schedule.models.MetrolinxResponse
+import com.shreyas.go_train_schedule.models.Station
 import com.shreyas.go_train_schedule.repository.MetrolinxRepository
 import com.shreyas.go_train_schedule.utils.ResultWrapper
 import kotlinx.coroutines.Dispatchers
@@ -24,11 +25,14 @@ class MetrolinxViewModel @Inject constructor(
     private val _metroLinxErrorResponse: MutableLiveData<String?> = MutableLiveData()
     val metroLinxErrorResponse: LiveData<String?> = _metroLinxErrorResponse
 
+    val stationList: MutableList<Station> = mutableListOf()
+
     val isError: MutableState<Boolean> = mutableStateOf(false)
     val isLoading: MutableState<Boolean> = mutableStateOf(false)
 
+    // Call the fetch Stops only once on app launch, store it in stationsList
     init {
-        fetchAllGoTrainsInfo()
+        fetchAllGoTrainStops()
     }
 
     internal fun fetchAllGoTrainsInfo() {
@@ -87,6 +91,39 @@ class MetrolinxViewModel @Inject constructor(
                             } ?: run {
                                 isError.value = true
                                 _metroLinxErrorResponse.value = NO_DEPARTURE_INFO_MESSAGE
+                            }
+                        }
+                    }
+
+                    is ResultWrapper.FAILURE -> {
+                        withContext(Dispatchers.Main) {
+                            isLoading.value = false
+                            isError.value = true
+                            _metroLinxErrorResponse.value = result.code
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    internal fun fetchAllGoTrainStops() {
+        viewModelScope.launch {
+            repository.getAllGoTrainStops().collect { result ->
+                when (result) {
+                    is ResultWrapper.LOADING -> {
+                        withContext(Dispatchers.Main) {
+                            isLoading.value = true
+                            isError.value = false
+                        }
+                    }
+
+                    is ResultWrapper.SUCCESS -> {
+                        withContext(Dispatchers.Main) {
+                            isLoading.value = false
+                            isError.value = false
+                            result.value?.stations?.let { stations ->
+                                stationList.addAll(stations.station)
                             }
                         }
                     }

@@ -8,7 +8,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -24,7 +24,7 @@ fun TrainDeparturesList(
     paddingValues: PaddingValues,
     departureTrips: MutableList<DepartureTrip>?,
 ) {
-    var expandedItemIndex by remember { mutableStateOf(-1) }
+    var expandedItemIndex by remember { mutableIntStateOf(-1) }
 
     LazyColumn(
         modifier = Modifier.padding(paddingValues),

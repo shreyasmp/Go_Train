@@ -3,6 +3,8 @@ package com.shreyas.go_train_schedule.utils
 import com.shreyas.go_train_schedule.models.DepartureTrip
 import com.shreyas.go_train_schedule.models.DepartureTrips
 import com.shreyas.go_train_schedule.models.MetrolinxResponse
+import com.shreyas.go_train_schedule.models.Station
+import com.shreyas.go_train_schedule.models.Stations
 import com.shreyas.go_train_schedule.models.Stop
 import com.shreyas.go_train_schedule.models.Trip
 import com.shreyas.go_train_schedule.models.Trips
@@ -122,6 +124,22 @@ object DataProvider {
 
     val departureTrips = mutableListOf(departureTrip, departureTrip2)
 
+    val station1 = Station(
+        locationCode = "OR",
+        publicStopId = "1OR",
+        locationName = "Oriole GO",
+        locationType = "Train Station"
+    )
+
+    val station2 = Station(
+        locationCode = "OS",
+        publicStopId = "1OS",
+        locationName = "Durham College Oshawa GO",
+        locationType = "Train & Bus Station"
+    )
+
+    val stations = mutableListOf(station1, station2)
+
     val metroLinxResponse = MetrolinxResponse(
         metadata = com.shreyas.go_train_schedule.models.Metadata(
             timeStamp = "2024-12-26 16:34:33",
@@ -131,7 +149,8 @@ object DataProvider {
         trips = Trips(
             trip = listOf(trip, trip2)
         ),
-        allDepartures = null
+        allDepartures = null,
+        stations = null,
     )
 
     val metroLinxResponse2 = MetrolinxResponse(
@@ -143,6 +162,20 @@ object DataProvider {
         trips = null,
         allDepartures = DepartureTrips(
             departureTrips = listOf(departureTrip, departureTrip2)
-        )
+        ),
+        stations = null,
+    )
+
+    val metroLinxResponse3 = MetrolinxResponse(
+        metadata = com.shreyas.go_train_schedule.models.Metadata(
+            timeStamp = "2024-12-26 16:34:33",
+            errorCode = "200",
+            errorMessage = "OK"
+        ),
+        trips = null,
+        allDepartures = null,
+        stations = Stations(
+            station = listOf(station1, station2)
+        ),
     )
 }

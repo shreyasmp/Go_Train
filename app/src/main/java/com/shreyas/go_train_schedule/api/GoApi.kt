@@ -11,4 +11,7 @@ interface GoApi {
 
     @GET("ServiceUpdate/UnionDepartures/All")
     suspend fun getAllGoTrainUnionDepartures(): Response<MetrolinxResponse>
+
+    @GET("Stop/All")
+    suspend fun getAllTrainStops(): Response<MetrolinxResponse>
 }

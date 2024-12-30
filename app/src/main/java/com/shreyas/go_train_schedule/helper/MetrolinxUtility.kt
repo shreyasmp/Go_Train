@@ -2,6 +2,7 @@ package com.shreyas.go_train_schedule.helper
 
 import com.shreyas.go_train_schedule.R
 import com.shreyas.go_train_schedule.models.RouteNames
+import com.shreyas.go_train_schedule.models.Station
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -24,23 +25,10 @@ object MetrolinxUtility {
         else -> "Unknown Line Code"
     }
 
-    fun resolveFirstStopCode(firstStop: String) =
-        when (firstStop) {
-            "UN" -> "Union Station"
-            "WR" -> "West Harbour GO"
-            "AL" -> "Aldershot GO"
-            "OS" -> "Durham College Oshawa GO"
-            "AU" -> "Aurora GO"
-            "MJ" -> "Mount Joy GO"
-            "MO" -> "Mount Pleasant GO"
-            "AD" -> "AllanDale Waterfront GO"
-            "NI" -> "Niagara Falls GO"
-            "OA" -> "Oakville GO"
-            "KI" -> "Kitchener GO"
-            "BE" -> "Bramalea GO"
-            "LI" -> "Old Elm GO"
-            else -> "Unknown Stop Code $firstStop"
-        }
+    fun getGOStationNameFromGoFirstStop(firstStop: String, stationList: List<Station>): String {
+        return stationList.find { it.locationCode == firstStop }?.locationName
+            ?: "Unknown Stop Code $firstStop"
+    }
 
     fun convertTo12HourFormat(time24: String): String? {
         val sdf24 = SimpleDateFormat("HH:mm", Locale.getDefault())

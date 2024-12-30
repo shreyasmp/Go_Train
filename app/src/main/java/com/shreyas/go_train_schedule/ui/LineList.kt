@@ -11,6 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.shreyas.go_train_schedule.models.Station
 import com.shreyas.go_train_schedule.models.Trip
 import com.shreyas.go_train_schedule.ui.theme.MetrolinxTheme
 import com.shreyas.go_train_schedule.utils.DataProvider
@@ -18,6 +19,7 @@ import com.shreyas.go_train_schedule.utils.DataProvider
 @Composable
 fun LineList(
     paddingValues: PaddingValues,
+    stationList: MutableList<Station>,
     lineList: MutableList<Trip>?,
 ) {
     LazyColumn(
@@ -31,7 +33,8 @@ fun LineList(
             }.run {
                 items(trips) { trip ->
                     LineCard(
-                        trip = trip
+                        trip = trip,
+                        stations = stationList,
                     )
                 }
             }
@@ -46,6 +49,7 @@ private fun ShowLineList() {
     MetrolinxTheme {
         LineList(
             paddingValues = PaddingValues(4.dp),
+            stationList = DataProvider.stations,
             lineList = DataProvider.trips,
         )
     }
