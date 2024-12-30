@@ -32,10 +32,13 @@ fun LineList(
                 trip.endTime
             }.run {
                 items(trips) { trip ->
-                    LineCard(
-                        trip = trip,
-                        stations = stationList,
-                    )
+                    // Display the line card only if display name is not null.
+                    trip.display?.let {
+                        LineCard(
+                            trip = trip,
+                            stations = stationList,
+                        )
+                    }
                 }
             }
         }
