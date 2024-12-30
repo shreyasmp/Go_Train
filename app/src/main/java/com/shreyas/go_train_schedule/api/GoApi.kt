@@ -3,6 +3,7 @@ package com.shreyas.go_train_schedule.api
 import com.shreyas.go_train_schedule.models.MetrolinxResponse
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface GoApi {
 
@@ -14,4 +15,10 @@ interface GoApi {
 
     @GET("Stop/All")
     suspend fun getAllTrainStops(): Response<MetrolinxResponse>
+
+    @GET("Fares/{FromStopCode}/{ToStopCode}")
+    suspend fun getFaresFromAndTo(
+        @Path("FromStopCode") fromStopCode: String,
+        @Path("ToStopCode") toStopCode: String,
+    ): Response<MetrolinxResponse>
 }

@@ -14,4 +14,16 @@ data class MetrolinxResponse(
     val allDepartures: DepartureTrips?,
     @SerializedName("Stations")
     val stations: Stations?,
+    @SerializedName("AllFares")
+    val allFares: AllFares?,
+) : Parcelable
+
+@Parcelize
+data class Metadata(
+    @SerializedName("TimeStamp")
+    val timeStamp: String?,
+    @SerializedName("ErrorCode")
+    val errorCode: String?,
+    @SerializedName("ErrorMessage")
+    val errorMessage: String?,
 ) : Parcelable
