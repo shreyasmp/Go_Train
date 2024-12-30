@@ -1,6 +1,9 @@
 # Go Train Schedule App
 
-This project is a Go Train Schedule application developed using Jetpack Compose for the UI and Kotlin for the backend logic. The app provides information about train schedules, pricing, and other relevant details.
+This project is a Go Train Schedule application developed using Jetpack Compose for the UI and
+Kotlin for the backend logic. The app provides information about train schedules, pricing, and other
+relevant details that will be helpful for customers who will use this app, once its published to
+PlayStore.
 
 ## Features
 
@@ -12,15 +15,16 @@ This project is a Go Train Schedule application developed using Jetpack Compose 
 ## Pending feature work
 
 - Fare Pricing tab
-- Unit Tests
+- More Helpful Features based on Postman project attached.
+- More Unit Tests
 - UI/UX changes or fixes on Font
-- Colour / theme ? 
+- Colour / theme ?
 
 ## Screenshots
 
-![Home Screen](screenshots/home_screen.png)
-![Departures Screen](screenshots/departures_screen.png)
-![Info Screen](screenshots/info_screen.png)
+<img src="screenshots/home_screen.png" alt="Home Screen" width="300"/>
+<img src="screenshots/departures_screen.png" alt="Departures Screen" width="300"/>
+<img src="screenshots/info_screen.png" alt="Info Screen" width="300"/>
 
 ## Installation
 
