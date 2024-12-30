@@ -16,6 +16,8 @@ interface MetrolinxRepository {
     suspend fun getAllGoTrainsServiceInfo(): Flow<ResultWrapper<MetrolinxResponse>>
 
     suspend fun getAllGoTrainDeparturesFromUnion(): Flow<ResultWrapper<MetrolinxResponse>>
+
+    suspend fun getAllGoTrainStops(): Flow<ResultWrapper<MetrolinxResponse>>
 }
 
 @Singleton
@@ -66,6 +68,27 @@ class MetrolinxRepositoryImpl @Inject constructor(
                 emit(ResultWrapper.FAILURE(code = e.message))
             }
         }.flowOn(Dispatchers.IO)
+
+    override suspend fun getAllGoTrainStops(): Flow<ResultWrapper<MetrolinxResponse>> = flow {
+        emit(ResultWrapper.LOADING(isLoading = true))
+
+        val response = service.getAllTrainStops()
+        try {
+            if (response.isSuccessful && response.body() != null) {
+                response.body()?.let {
+                    Log.d(TAG, "Fetched Response for All Stop Name/Codes for GO: ")
+                    emit(ResultWrapper.LOADING(isLoading = false))
+                    emit(ResultWrapper.SUCCESS(value = it))
+                }
+            } else {
+                emit(ResultWrapper.LOADING(isLoading = false))
+                emit(ResultWrapper.FAILURE(code = null))
+            }
+        } catch (e: Exception) {
+            emit(ResultWrapper.LOADING(isLoading = false))
+            emit(ResultWrapper.FAILURE(code = e.message))
+        }
+    }.flowOn(Dispatchers.IO)
 
     private companion object {
         val TAG = MetrolinxRepositoryImpl::class.simpleName

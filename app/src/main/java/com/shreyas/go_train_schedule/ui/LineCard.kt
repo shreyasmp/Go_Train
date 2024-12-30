@@ -33,6 +33,7 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import coil.size.Size
 import com.shreyas.go_train_schedule.helper.MetrolinxUtility
+import com.shreyas.go_train_schedule.models.Station
 import com.shreyas.go_train_schedule.models.Trip
 import com.shreyas.go_train_schedule.ui.theme.MetrolinxTheme
 import com.shreyas.go_train_schedule.utils.DataProvider
@@ -40,6 +41,7 @@ import com.shreyas.go_train_schedule.utils.DataProvider
 @Composable
 fun LineCard(
     trip: Trip,
+    stations: MutableList<Station>,
 ) {
     Card(
         modifier = Modifier
@@ -114,7 +116,10 @@ fun LineCard(
                 Spacer(modifier = Modifier.height(2.dp))
 
                 DrawComposableText(
-                    content = "From: " + MetrolinxUtility.resolveFirstStopCode(trip.firstStopCode),
+                    content = "From: " + MetrolinxUtility.getGOStationNameFromGoFirstStop(
+                        trip.firstStopCode,
+                        stationList = stations
+                    ),
                     start = 0.dp,
                     top = 0.dp,
                     end = 0.dp,
@@ -137,6 +142,7 @@ private fun ShowLineCard() {
     MetrolinxTheme {
         LineCard(
             trip = DataProvider.trip,
+            stations = DataProvider.stations,
         )
     }
 }

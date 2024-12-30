@@ -118,6 +118,45 @@ class MetrolinxViewModelTest {
         assertEquals(errorCode, viewModel.metroLinxErrorResponse.value)
     }
 
+    @Test
+    fun `fetchAllGoTrainStops success updates LiveData correctly`() = runTest {
+        // Arrange
+        val mockResponse = DataProvider.metroLinxResponse3
+        coEvery { repository.getAllGoTrainStops() } returns flow {
+            emit(ResultWrapper.LOADING(false))
+            emit(ResultWrapper.SUCCESS(mockResponse))
+        }
+
+        // Act
+        viewModel.fetchAllGoTrainStops()
+
+        // Assert
+        assertEquals(false, viewModel.isLoading.value)
+        assertEquals(false, viewModel.isLoading.value)
+        assertEquals(mockResponse.stations?.station, viewModel.stationList)
+        assertEquals(false, viewModel.isError.value)
+    }
+
+    @Test
+    fun `fetchAllGoTrainStops failure updates LiveData correctly`() = runTest {
+        // Arrange
+        val errorCode = "Error fetching departures"
+        coEvery { repository.getAllGoTrainStops() } returns flow {
+            emit(ResultWrapper.LOADING(false))
+            emit(ResultWrapper.FAILURE(errorCode))
+        }
+
+        // Act
+        viewModel.fetchAllGoTrainStops()
+
+        // Assert
+        assertEquals(false, viewModel.isLoading.value)
+        assertEquals(false, viewModel.isLoading.value)
+        assertNull(viewModel.metroLinxResponse.value)
+        assertEquals(true, viewModel.isError.value)
+        assertEquals(errorCode, viewModel.metroLinxErrorResponse.value)
+    }
+
     @After
     fun tearDown() {
         clearAllMocks()

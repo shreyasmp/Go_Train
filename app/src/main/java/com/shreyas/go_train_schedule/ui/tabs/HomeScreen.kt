@@ -71,6 +71,7 @@ fun HomeScreen(
                         metroLinxResponse?.let { response ->
                             LineList(
                                 paddingValues = padding,
+                                stationList = viewModel.stationList,
                                 lineList = response.trips?.trip?.toMutableList(),
                             )
                         }

@@ -1,6 +1,7 @@
 package com.shreyas.go_train_schedule.helper
 
 import com.shreyas.go_train_schedule.R
+import com.shreyas.go_train_schedule.models.Station
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -13,9 +14,29 @@ class MetrolinxUtilityTest {
     }
 
     @Test
-    fun testResolveFirstStopCode() {
-        assertEquals("Union Station", MetrolinxUtility.resolveFirstStopCode("UN"))
-        assertEquals("Unknown Stop Code XX", MetrolinxUtility.resolveFirstStopCode("XX"))
+    fun testGetGOStationNameFromGoFirstStop() {
+        val stationList = listOf(
+            Station(
+                locationCode = "UN",
+                locationName = "Union Station",
+                publicStopId = "1UN",
+                locationType = "Train Station"
+            ),
+            Station(
+                locationCode = "WR",
+                locationName = "West Harbour GO",
+                publicStopId = "1WR",
+                locationType = "Train Station"
+            ),
+        )
+        assertEquals(
+            "Union Station",
+            MetrolinxUtility.getGOStationNameFromGoFirstStop("UN", stationList)
+        )
+        assertEquals(
+            "Unknown Stop Code XX",
+            MetrolinxUtility.getGOStationNameFromGoFirstStop("XX", stationList)
+        )
     }
 
     @Test

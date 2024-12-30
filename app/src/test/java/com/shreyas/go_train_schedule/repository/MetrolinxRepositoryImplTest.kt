@@ -99,6 +99,44 @@ class MetrolinxRepositoryImplTest {
         }
 
         // Arrange
+        coEvery { service.getAllTrainStops() } returns Response.error(
+            404,
+            errorResponseBody
+        )
+
+        // Act
+        val result = repository.getAllGoTrainStops().toList()
+
+        // Assert
+        assertEquals(ResultWrapper.LOADING(true), result[0])
+        assertEquals(ResultWrapper.LOADING(false), result[1])
+        assertEquals(ResultWrapper.FAILURE(null), result[2])
+    }
+
+    @Test
+    fun `getAllGoTrainStops success`() = runTest {
+        // Arrange
+        val mockResponse = DataProvider.metroLinxResponse3
+        coEvery { service.getAllTrainStops() } returns Response.success(mockResponse)
+
+        // Act
+        val result = repository.getAllGoTrainStops().toList()
+
+        // Assert
+        assertEquals(ResultWrapper.LOADING(true), result[0])
+        assertEquals(ResultWrapper.LOADING(false), result[1])
+        assertEquals(ResultWrapper.SUCCESS(mockResponse), result[2])
+    }
+
+    @Test
+    fun `getAllGoTrainStops failure`() = runTest {
+
+        val errorResponseBody = mockk<ResponseBody> {
+            every { contentType() } returns "application/json".toMediaType()
+            every { contentLength() } returns 0L
+        }
+
+        // Arrange
         coEvery { service.getAllGoTrainUnionDepartures() } returns Response.error(
             404,
             errorResponseBody
