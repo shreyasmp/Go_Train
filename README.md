@@ -22,9 +22,11 @@ PlayStore.
 
 ## Screenshots
 
-<img src="screenshots/home_screen.png" alt="Home Screen" width="300"/>
-<img src="screenshots/departures_screen.png" alt="Departures Screen" width="300"/>
-<img src="screenshots/info_screen.png" alt="Info Screen" width="300"/>
+<div style="display: flex; justify-content: space-around;">
+    <img src="screenshots/home_screen.png" alt="Home Screen" width="300"/>
+    <img src="screenshots/departures_screen.png" alt="Departures Screen" width="300"/>
+    <img src="screenshots/info_screen.png" alt="Info Screen" width="300"/>
+</div>
 
 ## Installation
 
