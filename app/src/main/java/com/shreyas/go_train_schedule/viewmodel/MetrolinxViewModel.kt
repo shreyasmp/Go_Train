@@ -140,6 +140,43 @@ class MetrolinxViewModel @Inject constructor(
         }
     }
 
+    internal fun fetchAllFaresFromStopToStop(fromStop: String, toStop: String) {
+        viewModelScope.launch {
+            repository.getFareFromStopCodeToStopCode(fromStopCode = fromStop, toStopCode = toStop)
+                .collect { result ->
+                    when (result) {
+                        is ResultWrapper.LOADING -> {
+                            withContext(Dispatchers.Main) {
+                                isLoading.value = true
+                                isError.value = false
+                            }
+                        }
+
+                        is ResultWrapper.SUCCESS -> {
+                            withContext(Dispatchers.Main) {
+                                isLoading.value = false
+                                result.value?.allFares?.let {
+                                    isError.value = false
+                                    _metroLinxResponse.value = result.value
+                                } ?: run {
+                                    isError.value = true
+                                    _metroLinxErrorResponse.value = NO_FARE_INFORMATION_MESSAGE
+                                }
+                            }
+                        }
+
+                        is ResultWrapper.FAILURE -> {
+                            withContext(Dispatchers.Main) {
+                                isLoading.value = false
+                                isError.value = true
+                                _metroLinxErrorResponse.value = result.code
+                            }
+                        }
+                    }
+                }
+        }
+    }
+
     override fun onCleared() {
         super.onCleared()
         _metroLinxResponse.value = null
@@ -153,5 +190,7 @@ class MetrolinxViewModel @Inject constructor(
             "No Scheduled Trains, right now. Pull to Refresh or check back later"
         const val NO_DEPARTURE_INFO_MESSAGE =
             "No Union Departure Info Available, right now. Pull to Refresh or check back later"
+        const val NO_FARE_INFORMATION_MESSAGE =
+            "No Fare Information available, please check back later"
     }
 }

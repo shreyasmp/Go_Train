@@ -10,3 +10,14 @@ data class Stations(
     val station: List<Station>,
 ): Parcelable
 
+@Parcelize
+data class Station(
+    @SerializedName("LocationCode")
+    val locationCode: String,
+    @SerializedName("PublicStopId")
+    val publicStopId: String,
+    @SerializedName("LocationName")
+    val locationName: String,
+    @SerializedName("LocationType")
+    val locationType: String,
+) : Parcelable

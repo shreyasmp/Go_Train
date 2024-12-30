@@ -18,6 +18,11 @@ interface MetrolinxRepository {
     suspend fun getAllGoTrainDeparturesFromUnion(): Flow<ResultWrapper<MetrolinxResponse>>
 
     suspend fun getAllGoTrainStops(): Flow<ResultWrapper<MetrolinxResponse>>
+
+    suspend fun getFareFromStopCodeToStopCode(
+        fromStopCode: String,
+        toStopCode: String
+    ): Flow<ResultWrapper<MetrolinxResponse>>
 }
 
 @Singleton
@@ -83,6 +88,29 @@ class MetrolinxRepositoryImpl @Inject constructor(
             } else {
                 emit(ResultWrapper.LOADING(isLoading = false))
                 emit(ResultWrapper.FAILURE(code = null))
+            }
+        } catch (e: Exception) {
+            emit(ResultWrapper.LOADING(isLoading = false))
+            emit(ResultWrapper.FAILURE(code = e.message))
+        }
+    }.flowOn(Dispatchers.IO)
+
+    override suspend fun getFareFromStopCodeToStopCode(
+        fromStopCode: String,
+        toStopCode: String
+    ): Flow<ResultWrapper<MetrolinxResponse>> = flow<ResultWrapper<MetrolinxResponse>> {
+        emit(ResultWrapper.LOADING(isLoading = true))
+
+        val response =
+            service.getFaresFromAndTo(fromStopCode = fromStopCode, toStopCode = toStopCode)
+
+        try {
+            if (response.isSuccessful && response.body() != null) {
+                response.body()?.let {
+                    Log.d(TAG, "Fetched Response for Fares for fromStop toStop: ")
+                    emit(ResultWrapper.LOADING(isLoading = false))
+                    emit(ResultWrapper.SUCCESS(value = it))
+                }
             }
         } catch (e: Exception) {
             emit(ResultWrapper.LOADING(isLoading = false))

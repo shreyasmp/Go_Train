@@ -16,6 +16,9 @@ import com.shreyas.go_train_schedule.models.Trip
 import com.shreyas.go_train_schedule.ui.theme.MetrolinxTheme
 import com.shreyas.go_train_schedule.utils.DataProvider
 
+private const val EMPTY_LIST_NULL_LINES =
+    "No Trains at this time, that are running to or from Union"
+
 @Composable
 fun LineList(
     paddingValues: PaddingValues,
@@ -27,18 +30,19 @@ fun LineList(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        lineList?.let { trips ->
-            trips.sortBy { trip ->
-                trip.endTime
-            }.run {
-                items(trips) { trip ->
-                    // Display the line card only if display name is not null.
-                    trip.display?.let {
-                        LineCard(
-                            trip = trip,
-                            stations = stationList,
-                        )
-                    }
+        lineList?.sortedBy { it.endTime }?.let { sortedTrips ->
+            var isErrorShown = false
+            items(sortedTrips) { trip ->
+                trip.display?.let {
+                    LineCard(
+                        trip = trip,
+                        stations = stationList,
+                    )
+                } ?: if (!isErrorShown) {
+                    isErrorShown = true
+                    ShowErrorMessage(errorMessage = EMPTY_LIST_NULL_LINES)
+                } else {
+                    // Nothing to do
                 }
             }
         }
