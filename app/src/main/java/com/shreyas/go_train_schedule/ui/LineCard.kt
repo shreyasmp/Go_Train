@@ -56,7 +56,6 @@ fun LineCard(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp, 16.dp, 0.dp, 16.dp)
-                .height(75.dp)
                 .clickable {
 
                 }
@@ -88,7 +87,7 @@ fun LineCard(
                     weightOfFont = FontWeight.Bold,
                     textSize = 14.sp,
                     styleOfText = MaterialTheme.typography.h6,
-                    maxLine = 1,
+                    maxLine = 2,
                     tag = "trainDisplayName"
                 )
 

@@ -177,6 +177,39 @@ class MetrolinxViewModel @Inject constructor(
         }
     }
 
+    internal fun fetchStooDetailsFromStopCode(stopCode: String) {
+        viewModelScope.launch {
+            repository.getStopDetailsFromStopCode(stopCode = stopCode).collect { result ->
+                when (result) {
+                    is ResultWrapper.LOADING -> {
+                        withContext(Dispatchers.Main) {
+                            isLoading.value = true
+                            isError.value = false
+                        }
+                    }
+
+                    is ResultWrapper.SUCCESS -> {
+                        withContext(Dispatchers.Main) {
+                            isLoading.value = false
+                            result.value?.stop?.let {
+                                isError.value = false
+                                _metroLinxResponse.value = result.value
+                            }
+                        }
+                    }
+
+                    is ResultWrapper.FAILURE -> {
+                        withContext(Dispatchers.Main) {
+                            isLoading.value = false
+                            isError.value = true
+                            _metroLinxErrorResponse.value = result.code
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     override fun onCleared() {
         super.onCleared()
         _metroLinxResponse.value = null

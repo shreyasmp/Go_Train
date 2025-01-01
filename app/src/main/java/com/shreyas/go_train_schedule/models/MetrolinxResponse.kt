@@ -16,6 +16,8 @@ data class MetrolinxResponse(
     val stations: Stations?,
     @SerializedName("AllFares")
     val allFares: AllFares?,
+    @SerializedName("Stop")
+    val stop: GoStop?,
 ) : Parcelable
 
 @Parcelize
