@@ -23,6 +23,10 @@ interface MetrolinxRepository {
         fromStopCode: String,
         toStopCode: String
     ): Flow<ResultWrapper<MetrolinxResponse>>
+
+    suspend fun getStopDetailsFromStopCode(
+        stopCode: String,
+    ): Flow<ResultWrapper<MetrolinxResponse>>
 }
 
 @Singleton
@@ -98,7 +102,7 @@ class MetrolinxRepositoryImpl @Inject constructor(
     override suspend fun getFareFromStopCodeToStopCode(
         fromStopCode: String,
         toStopCode: String
-    ): Flow<ResultWrapper<MetrolinxResponse>> = flow<ResultWrapper<MetrolinxResponse>> {
+    ): Flow<ResultWrapper<MetrolinxResponse>> = flow {
         emit(ResultWrapper.LOADING(isLoading = true))
 
         val response =
@@ -117,6 +121,26 @@ class MetrolinxRepositoryImpl @Inject constructor(
             emit(ResultWrapper.FAILURE(code = e.message))
         }
     }.flowOn(Dispatchers.IO)
+
+    override suspend fun getStopDetailsFromStopCode(stopCode: String): Flow<ResultWrapper<MetrolinxResponse>> =
+        flow {
+            emit(ResultWrapper.LOADING(isLoading = true))
+
+            val response = service.getStopDetails(stopCode = stopCode)
+
+            try {
+                if (response.isSuccessful && response.body() != null) {
+                    response.body()?.let {
+                        Log.d(TAG, "Fetched Stop Details Response for $stopCode")
+                        emit(ResultWrapper.LOADING(isLoading = false))
+                        emit(ResultWrapper.SUCCESS(value = it))
+                    }
+                }
+            } catch (e: Exception) {
+                emit(ResultWrapper.LOADING(isLoading = false))
+                emit(ResultWrapper.FAILURE(code = e.message))
+            }
+        }.flowOn(Dispatchers.IO)
 
     private companion object {
         val TAG = MetrolinxRepositoryImpl::class.simpleName

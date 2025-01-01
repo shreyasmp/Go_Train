@@ -21,4 +21,9 @@ interface GoApi {
         @Path("FromStopCode") fromStopCode: String,
         @Path("ToStopCode") toStopCode: String,
     ): Response<MetrolinxResponse>
+
+    @GET("Stop/Details/{StopCode}")
+    suspend fun getStopDetails(
+        @Path("StopCode") stopCode: String
+    ): Response<MetrolinxResponse>
 }

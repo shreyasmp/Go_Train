@@ -152,6 +152,7 @@ object DataProvider {
         allDepartures = null,
         stations = null,
         allFares = null,
+        stop = null,
     )
 
     val metroLinxResponse2 = MetrolinxResponse(
@@ -166,6 +167,7 @@ object DataProvider {
         ),
         stations = null,
         allFares = null,
+        stop = null
     )
 
     val metroLinxResponse3 = MetrolinxResponse(
@@ -180,5 +182,6 @@ object DataProvider {
             station = listOf(station1, station2)
         ),
         allFares = null,
+        stop = null,
     )
 }

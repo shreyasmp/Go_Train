@@ -31,18 +31,12 @@ fun LineList(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         lineList?.sortedBy { it.endTime }?.let { sortedTrips ->
-            var isErrorShown = false
             items(sortedTrips) { trip ->
                 trip.display?.let {
                     LineCard(
                         trip = trip,
                         stations = stationList,
                     )
-                } ?: if (!isErrorShown) {
-                    isErrorShown = true
-                    ShowErrorMessage(errorMessage = EMPTY_LIST_NULL_LINES)
-                } else {
-                    // Nothing to do
                 }
             }
         }
