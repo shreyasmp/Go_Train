@@ -7,8 +7,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Bolt
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -25,6 +28,8 @@ import com.shreyas.go_train_schedule.models.DepartureTrip
 import com.shreyas.go_train_schedule.ui.theme.MetrolinxTheme
 import com.shreyas.go_train_schedule.utils.DataProvider
 
+private const val EXPRESS_TO = "Express To"
+
 @Composable
 fun DepartureCardHeader(
     modifier: Modifier = Modifier,
@@ -32,7 +37,11 @@ fun DepartureCardHeader(
     onClick: () -> Unit = {},
 ) {
 
+    // The last stop Name determines where the train stops to which is what displayed on Union Station Screens
     val lastStopName = departureTrip.stops.lastOrNull()?.name ?: ""
+
+    // If the first stops object in list has "Express To" its an Express Train
+    val isExpressTrain = departureTrip.stops.firstOrNull()?.name?.contains(EXPRESS_TO) == true
 
     Row(
         modifier = modifier
@@ -46,18 +55,29 @@ fun DepartureCardHeader(
                 .fillMaxWidth(),
             verticalArrangement = Arrangement.SpaceEvenly
         ) {
-            DrawComposableText(
-                content = "${departureTrip.service} ($lastStopName)",
-                start = 0.dp,
-                top = 0.dp,
-                end = 0.dp,
-                bottom = 0.dp,
-                weightOfFont = FontWeight.Bold,
-                textSize = 14.sp,
-                styleOfText = MaterialTheme.typography.h6,
-                maxLine = 1,
-                tag = "serviceName"
-            )
+            Row {
+                DrawComposableText(
+                    content = "${departureTrip.service} ($lastStopName) ",
+                    start = 0.dp,
+                    top = 0.dp,
+                    end = 0.dp,
+                    bottom = 0.dp,
+                    weightOfFont = FontWeight.Bold,
+                    textSize = 14.sp,
+                    styleOfText = MaterialTheme.typography.h6,
+                    maxLine = 1,
+                    tag = "serviceName"
+                )
+
+                if (isExpressTrain) {
+                    Icon(
+                        imageVector = Icons.Default.Bolt,
+                        contentDescription = "Express Train",
+                        tint = Color.Red,
+                        modifier = Modifier
+                    )
+                }
+            }
 
             DrawComposableText(
                 content = MetrolinxUtility.getTimeFormatFromString(departureTrip.time),
