@@ -27,6 +27,14 @@ interface MetrolinxRepository {
     suspend fun getStopDetailsFromStopCode(
         stopCode: String,
     ): Flow<ResultWrapper<MetrolinxResponse>>
+
+    suspend fun getEveryStopTimeDetailsPerRouteForGivenDate(
+        date: String,
+        fromStopCode: String,
+        toStopCode: String,
+        startTime: String,
+        maxJourney: String,
+    ): Flow<ResultWrapper<MetrolinxResponse>>
 }
 
 @Singleton
@@ -141,6 +149,36 @@ class MetrolinxRepositoryImpl @Inject constructor(
                 emit(ResultWrapper.FAILURE(code = e.message))
             }
         }.flowOn(Dispatchers.IO)
+
+    override suspend fun getEveryStopTimeDetailsPerRouteForGivenDate(
+        date: String,
+        fromStopCode: String,
+        toStopCode: String,
+        startTime: String,
+        maxJourney: String
+    ): Flow<ResultWrapper<MetrolinxResponse>> = flow {
+        emit(ResultWrapper.LOADING(isLoading = true))
+
+        val response = service.getEveryStopTimePerRouteForGivenDate(
+            date = date,
+            fromStopCode = fromStopCode,
+            toStopCode = toStopCode,
+            startTime = startTime,
+            maxJourney = maxJourney,
+            )
+        try {
+            if (response.isSuccessful && response.body() != null) {
+                response.body()?.let {
+                    Log.d(TAG, "Fetched Stop Details Response for Given Route: ")
+                    emit(ResultWrapper.LOADING(isLoading = false))
+                    emit(ResultWrapper.SUCCESS(value = it))
+                }
+            }
+        } catch (e: Exception) {
+            emit(ResultWrapper.LOADING(isLoading = false))
+            emit(ResultWrapper.FAILURE(code = e.message))
+        }
+    }.flowOn(Dispatchers.IO)
 
     private companion object {
         val TAG = MetrolinxRepositoryImpl::class.simpleName

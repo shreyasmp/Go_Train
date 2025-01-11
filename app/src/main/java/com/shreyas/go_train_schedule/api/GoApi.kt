@@ -26,4 +26,13 @@ interface GoApi {
     suspend fun getStopDetails(
         @Path("StopCode") stopCode: String
     ): Response<MetrolinxResponse>
+
+    @GET("Schedule/Journey/{Date}/{FromStopCode}/{ToStopCode}/{StartTime}/{MaxJourney}")
+    suspend fun getEveryStopTimePerRouteForGivenDate(
+        @Path("Date") date: String,
+        @Path("FromStopCode") fromStopCode: String,
+        @Path("ToStopCode") toStopCode: String,
+        @Path("StartTime") startTime: String,
+        @Path("MaxJourney") maxJourney: String = "3",
+    ): Response<MetrolinxResponse>
 }
