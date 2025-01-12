@@ -2,6 +2,7 @@ package com.shreyas.go_train_schedule.di
 
 import android.app.Application
 import com.shreyas.go_train_schedule.MainApplication
+import com.shreyas.go_train_schedule.di.modules.AppModule
 import com.shreyas.go_train_schedule.di.modules.ServiceModule
 import com.shreyas.go_train_schedule.di.modules.ViewModelFactoryModule
 import com.shreyas.go_train_schedule.di.modules.ViewModelModule
@@ -19,6 +20,7 @@ import javax.inject.Singleton
         ViewModelFactoryModule::class,
         ViewModule::class,
         ViewModelModule::class,
+        AppModule::class,
     ]
 )
 interface AppComponent {
@@ -31,5 +33,7 @@ interface AppComponent {
 
         @BindsInstance
         fun application(application: Application): Builder
+
+        fun appModule(appModule: AppModule): Builder
     }
 }
