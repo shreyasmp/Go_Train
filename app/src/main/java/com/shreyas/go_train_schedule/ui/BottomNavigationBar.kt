@@ -23,9 +23,9 @@ fun BottomNavigationBar(navController: NavHostController) {
     ) {
         BottomNavigationItem(
             icon = { Icon(Icons.Default.Train, contentDescription = null) },
-            label = { Text(stringResource(id = R.string.title_home)) },
+            label = { Text(stringResource(id = R.string.title_arrivals)) },
             selected = false,
-            onClick = { navController.navigate("home") }
+            onClick = { navController.navigate("arrivals") }
         )
         BottomNavigationItem(
             icon = { Icon(Icons.Default.DepartureBoard, contentDescription = null) },
