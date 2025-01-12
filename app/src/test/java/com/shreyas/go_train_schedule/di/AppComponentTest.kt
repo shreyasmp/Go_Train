@@ -1,5 +1,6 @@
 package com.shreyas.go_train_schedule.di
 
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.shreyas.go_train_schedule.MainApplication
 import com.shreyas.go_train_schedule.repository.MetrolinxRepository
 import com.shreyas.go_train_schedule.viewmodel.MetrolinxViewModel
@@ -16,6 +17,7 @@ import kotlinx.coroutines.test.setMain
 import org.junit.After
 import org.junit.Assert.assertNotNull
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito.mock
 import javax.inject.Singleton
@@ -44,6 +46,9 @@ class TestAppModule {
 }
 
 class AppComponentTest {
+
+    @get:Rule
+    val instantExecutorRule = InstantTaskExecutorRule()
 
     private val testDispatcher = StandardTestDispatcher()
 

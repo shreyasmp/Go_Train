@@ -7,4 +7,5 @@
     <string name="title_price">Price</string>
     <string name="title_go_fare">Go Fare Pricing</string>
     <string name="union_departures">Go Union Departures</string>
+    <string name="no_network_error_message">No network connection. Please check your internet settings.</string>
 </resources>

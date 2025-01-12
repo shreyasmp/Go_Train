@@ -18,6 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.navigation.NavController
 import com.shreyas.go_train_schedule.R
 import com.shreyas.go_train_schedule.ui.LineList
 import com.shreyas.go_train_schedule.ui.ShowCircularProgressIndicator
@@ -27,7 +28,8 @@ import com.shreyas.go_train_schedule.viewmodel.MetrolinxViewModel
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun HomeScreen(
-    viewModel: MetrolinxViewModel
+    viewModel: MetrolinxViewModel,
+    navController: NavController,
 ) {
     // Implement your Home screen UI here
     val metroLinxResponse by viewModel.metroLinxResponse.observeAsState()

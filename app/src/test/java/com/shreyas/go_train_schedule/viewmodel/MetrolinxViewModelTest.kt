@@ -1,11 +1,10 @@
 package com.shreyas.go_train_schedule.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.shreyas.go_train_schedule.models.MetrolinxResponse
 import com.shreyas.go_train_schedule.repository.MetrolinxRepository
 import com.shreyas.go_train_schedule.utils.DataProvider
 import com.shreyas.go_train_schedule.utils.ResultWrapper
-import io.mockk.clearAllMocks
-import io.mockk.clearMocks
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
@@ -15,8 +14,7 @@ import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
 import org.junit.After
-import org.junit.Assert.assertEquals
-import org.junit.Assert.assertNull
+import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -30,14 +28,16 @@ class MetrolinxViewModelTest {
     private lateinit var repository: MetrolinxRepository
     private lateinit var viewModel: MetrolinxViewModel
 
-    private val testDispatcher = Dispatchers.Unconfined
-
     @Before
     fun setUp() {
-        Dispatchers.setMain(testDispatcher)
-        repository = mockk(relaxed = true)
+        Dispatchers.setMain(Dispatchers.Unconfined)
+        repository = mockk()
         viewModel = MetrolinxViewModel(repository)
-        clearMocks(repository)
+    }
+
+    @After
+    fun tearDown() {
+        Dispatchers.resetMain()
     }
 
     @Test
@@ -45,15 +45,14 @@ class MetrolinxViewModelTest {
         // Arrange
         val mockResponse = DataProvider.metroLinxResponse
         coEvery { repository.getAllGoTrainsServiceInfo() } returns flow {
+            emit(ResultWrapper.LOADING(true))
             emit(ResultWrapper.LOADING(false))
             emit(ResultWrapper.SUCCESS(mockResponse))
         }
 
-        // Act
+        viewModel.updateNetworkStatus(true)
         viewModel.fetchAllGoTrainsInfo()
 
-        // Assert
-        assertEquals(false, viewModel.isLoading.value)
         assertEquals(false, viewModel.isLoading.value)
         assertEquals(mockResponse, viewModel.metroLinxResponse.value)
         assertEquals(false, viewModel.isError.value)
@@ -61,18 +60,16 @@ class MetrolinxViewModelTest {
 
     @Test
     fun `fetchAllGoTrainsInfo failure updates LiveData correctly`() = runTest {
-        // Arrange
         val errorCode = "Error fetching train info"
         coEvery { repository.getAllGoTrainsServiceInfo() } returns flow {
+            emit(ResultWrapper.LOADING(true))
             emit(ResultWrapper.LOADING(false))
             emit(ResultWrapper.FAILURE(errorCode))
         }
 
-        // Act
+        viewModel.updateNetworkStatus(true)
         viewModel.fetchAllGoTrainsInfo()
 
-        // Assert
-        assertEquals(false, viewModel.isLoading.value)
         assertEquals(false, viewModel.isLoading.value)
         assertNull(viewModel.metroLinxResponse.value)
         assertEquals(true, viewModel.isError.value)
@@ -84,15 +81,14 @@ class MetrolinxViewModelTest {
         // Arrange
         val mockResponse = DataProvider.metroLinxResponse2
         coEvery { repository.getAllGoTrainDeparturesFromUnion() } returns flow {
+            emit(ResultWrapper.LOADING(true))
             emit(ResultWrapper.LOADING(false))
             emit(ResultWrapper.SUCCESS(mockResponse))
         }
 
-        // Act
+        viewModel.updateNetworkStatus(true)
         viewModel.fetchAllGoTrainDeparturesFromUnion()
 
-        // Assert
-        assertEquals(false, viewModel.isLoading.value)
         assertEquals(false, viewModel.isLoading.value)
         assertEquals(mockResponse, viewModel.metroLinxResponse.value)
         assertEquals(false, viewModel.isError.value)
@@ -100,18 +96,16 @@ class MetrolinxViewModelTest {
 
     @Test
     fun `fetchAllGoTrainDeparturesFromUnion failure updates LiveData correctly`() = runTest {
-        // Arrange
         val errorCode = "Error fetching departures"
         coEvery { repository.getAllGoTrainDeparturesFromUnion() } returns flow {
+            emit(ResultWrapper.LOADING(true))
             emit(ResultWrapper.LOADING(false))
             emit(ResultWrapper.FAILURE(errorCode))
         }
 
-        // Act
+        viewModel.updateNetworkStatus(true)
         viewModel.fetchAllGoTrainDeparturesFromUnion()
 
-        // Assert
-        assertEquals(false, viewModel.isLoading.value)
         assertEquals(false, viewModel.isLoading.value)
         assertNull(viewModel.metroLinxResponse.value)
         assertEquals(true, viewModel.isError.value)
@@ -123,43 +117,34 @@ class MetrolinxViewModelTest {
         // Arrange
         val mockResponse = DataProvider.metroLinxResponse3
         coEvery { repository.getAllGoTrainStops() } returns flow {
+            emit(ResultWrapper.LOADING(true))
             emit(ResultWrapper.LOADING(false))
             emit(ResultWrapper.SUCCESS(mockResponse))
         }
 
-        // Act
+        viewModel.updateNetworkStatus(true)
         viewModel.fetchAllGoTrainStops()
 
-        // Assert
         assertEquals(false, viewModel.isLoading.value)
-        assertEquals(false, viewModel.isLoading.value)
-        assertEquals(mockResponse.stations?.station, viewModel.stationList)
         assertEquals(false, viewModel.isError.value)
+        assertEquals(mockResponse.stations?.station, viewModel.stationList)
     }
 
     @Test
     fun `fetchAllGoTrainStops failure updates LiveData correctly`() = runTest {
-        // Arrange
-        val errorCode = "Error fetching departures"
+        val errorCode = "Error fetching stops"
         coEvery { repository.getAllGoTrainStops() } returns flow {
+            emit(ResultWrapper.LOADING(true))
             emit(ResultWrapper.LOADING(false))
             emit(ResultWrapper.FAILURE(errorCode))
         }
 
-        // Act
+        viewModel.updateNetworkStatus(true)
         viewModel.fetchAllGoTrainStops()
 
-        // Assert
-        assertEquals(false, viewModel.isLoading.value)
         assertEquals(false, viewModel.isLoading.value)
         assertNull(viewModel.metroLinxResponse.value)
         assertEquals(true, viewModel.isError.value)
         assertEquals(errorCode, viewModel.metroLinxErrorResponse.value)
-    }
-
-    @After
-    fun tearDown() {
-        clearAllMocks()
-        Dispatchers.resetMain()
     }
 }

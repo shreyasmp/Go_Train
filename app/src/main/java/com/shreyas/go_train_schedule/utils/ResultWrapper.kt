@@ -6,7 +6,7 @@ sealed class ResultWrapper<out T : Any> {
     ) : ResultWrapper<Nothing>()
     data class SUCCESS<out T : Any>(val value: T?) : ResultWrapper<T>()
     data class FAILURE(
-        val code: String?
+        val code: String
     ) : ResultWrapper<Nothing>()
 
     val success: Boolean

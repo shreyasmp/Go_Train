@@ -56,11 +56,11 @@ class MetrolinxRepositoryImpl @Inject constructor(
                     }
                 } else {
                     emit(ResultWrapper.LOADING(isLoading = false))
-                    emit(ResultWrapper.FAILURE(code = null))
+                    emit(ResultWrapper.FAILURE(code = response.message()))
                 }
             } catch (e: Exception) {
                 emit(ResultWrapper.LOADING(isLoading = false))
-                emit(ResultWrapper.FAILURE(code = e.message))
+                emit(ResultWrapper.FAILURE(code = e.message.toString()))
             }
         }.flowOn(Dispatchers.IO)
 
@@ -78,11 +78,11 @@ class MetrolinxRepositoryImpl @Inject constructor(
                     }
                 } else {
                     emit(ResultWrapper.LOADING(isLoading = false))
-                    emit(ResultWrapper.FAILURE(code = null))
+                    emit(ResultWrapper.FAILURE(code = response.message()))
                 }
             } catch (e: Exception) {
                 emit(ResultWrapper.LOADING(isLoading = false))
-                emit(ResultWrapper.FAILURE(code = e.message))
+                emit(ResultWrapper.FAILURE(code = e.message.toString()))
             }
         }.flowOn(Dispatchers.IO)
 
@@ -99,11 +99,11 @@ class MetrolinxRepositoryImpl @Inject constructor(
                 }
             } else {
                 emit(ResultWrapper.LOADING(isLoading = false))
-                emit(ResultWrapper.FAILURE(code = null))
+                emit(ResultWrapper.FAILURE(code = response.message()))
             }
         } catch (e: Exception) {
             emit(ResultWrapper.LOADING(isLoading = false))
-            emit(ResultWrapper.FAILURE(code = e.message))
+            emit(ResultWrapper.FAILURE(code = e.message.toString()))
         }
     }.flowOn(Dispatchers.IO)
 
@@ -126,7 +126,7 @@ class MetrolinxRepositoryImpl @Inject constructor(
             }
         } catch (e: Exception) {
             emit(ResultWrapper.LOADING(isLoading = false))
-            emit(ResultWrapper.FAILURE(code = e.message))
+            emit(ResultWrapper.FAILURE(code = e.message.toString()))
         }
     }.flowOn(Dispatchers.IO)
 
@@ -146,7 +146,7 @@ class MetrolinxRepositoryImpl @Inject constructor(
                 }
             } catch (e: Exception) {
                 emit(ResultWrapper.LOADING(isLoading = false))
-                emit(ResultWrapper.FAILURE(code = e.message))
+                emit(ResultWrapper.FAILURE(code = e.message.toString()))
             }
         }.flowOn(Dispatchers.IO)
 
@@ -165,7 +165,7 @@ class MetrolinxRepositoryImpl @Inject constructor(
             toStopCode = toStopCode,
             startTime = startTime,
             maxJourney = maxJourney,
-            )
+        )
         try {
             if (response.isSuccessful && response.body() != null) {
                 response.body()?.let {
@@ -176,7 +176,7 @@ class MetrolinxRepositoryImpl @Inject constructor(
             }
         } catch (e: Exception) {
             emit(ResultWrapper.LOADING(isLoading = false))
-            emit(ResultWrapper.FAILURE(code = e.message))
+            emit(ResultWrapper.FAILURE(code = e.message.toString()))
         }
     }.flowOn(Dispatchers.IO)
 

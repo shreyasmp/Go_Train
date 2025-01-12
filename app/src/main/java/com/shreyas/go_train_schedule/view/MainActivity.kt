@@ -1,34 +1,28 @@
 package com.shreyas.go_train_schedule.view
 
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.net.NetworkRequest
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.DepartureBoard
-import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.PriceCheck
-import androidx.compose.material.icons.filled.Train
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavHostController
-import com.shreyas.go_train_schedule.R
+import androidx.lifecycle.lifecycleScope
+import com.shreyas.go_train_schedule.network.NetworkCallback
 import com.shreyas.go_train_schedule.ui.tabs.MainScreen
 import com.shreyas.go_train_schedule.ui.theme.MetrolinxTheme
 import com.shreyas.go_train_schedule.viewmodel.MetrolinxViewModel
 import dagger.android.AndroidInjection
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class MainActivity : ComponentActivity() {
 
     private lateinit var viewModel: MetrolinxViewModel
+    private lateinit var networkCallback: NetworkCallback
+    private lateinit var connectivityManager: ConnectivityManager
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -39,6 +33,14 @@ class MainActivity : ComponentActivity() {
 
         viewModel = ViewModelProvider(this, viewModelFactory)[MetrolinxViewModel::class.java]
 
+        networkCallback = NetworkCallback(context = this)
+
+        lifecycleScope.launch {
+            networkCallback.isConnected.observe(this@MainActivity) { isConnected ->
+                viewModel.updateNetworkStatus(isConnected = isConnected)
+            }
+        }
+
         setContent {
             MetrolinxTheme {
                 Surface(color = MaterialTheme.colors.background) {
@@ -47,37 +49,22 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-}
 
-@Composable
-fun BottomNavigationBar(navController: NavHostController) {
-    BottomNavigation(
-        backgroundColor = MaterialTheme.colors.surface,
-        contentColor = MaterialTheme.colors.onSurface,
-    ) {
-        BottomNavigationItem(
-            icon = { Icon(Icons.Default.Train, contentDescription = null) },
-            label = { Text(stringResource(id = R.string.title_home)) },
-            selected = false,
-            onClick = { navController.navigate("home") }
-        )
-        BottomNavigationItem(
-            icon = { Icon(Icons.Default.DepartureBoard, contentDescription = null) },
-            label = { Text(stringResource(id = R.string.title_union_departures)) },
-            selected = false,
-            onClick = { navController.navigate("departures") }
-        )
-        BottomNavigationItem(
-            icon = { Icon(Icons.Default.PriceCheck, contentDescription = null) },
-            label = { Text(stringResource(id = R.string.title_price)) },
-            selected = false,
-            onClick = { navController.navigate("pricing") }
-        )
-        BottomNavigationItem(
-            icon = { Icon(Icons.Default.Info, contentDescription = null) },
-            label = { Text(stringResource(id = R.string.title_info)) },
-            selected = false,
-            onClick = { navController.navigate("info") }
-        )
+    override fun onStart() {
+        super.onStart()
+        connectivityManager = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
+        // Create a network request to monitor internet connectivity
+        val networkRequest = NetworkRequest.Builder()
+            .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+            .build()
+        // Register the network callback to handle network changes
+        connectivityManager.registerNetworkCallback(networkRequest, networkCallback)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        connectivityManager = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
+        //Unregister the network callback to handle network changes
+        connectivityManager.unregisterNetworkCallback(networkCallback)
     }
 }
