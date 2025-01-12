@@ -35,7 +35,49 @@ class MetrolinxViewModel @Inject constructor(
 
     // Call the fetch Stops only once on app launch, store it in stationsList
     init {
+        updateNetworkStatus(isConnected = true)
         fetchAllGoTrainStops()
+    }
+
+    internal fun fetchAllGoTrainStops() {
+        viewModelScope.launch {
+            try {
+                repository.getAllGoTrainStops().collect { result ->
+                    when (result) {
+                        is ResultWrapper.LOADING -> {
+                            withContext(Dispatchers.Main) {
+                                isLoading.value = true
+                                isError.value = false
+                            }
+                        }
+
+                        is ResultWrapper.SUCCESS -> {
+                            withContext(Dispatchers.Main) {
+                                isLoading.value = false
+                                isError.value = false
+                                result.value?.stations?.let { stations ->
+                                    stationList.addAll(stations.station)
+                                }
+                            }
+                        }
+
+                        is ResultWrapper.FAILURE -> {
+                            withContext(Dispatchers.Main) {
+                                isLoading.value = false
+                                isError.value = true
+                                _metroLinxErrorResponse.value = result.code
+                            }
+                        }
+                    }
+                }
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    isLoading.value = false
+                    isError.value = true
+                    _metroLinxErrorResponse.value = "Network error: ${e.message}"
+                }
+            }
+        }
     }
 
     internal fun fetchAllGoTrainsInfo() {
@@ -99,43 +141,6 @@ class MetrolinxViewModel @Inject constructor(
                                 } ?: run {
                                     isError.value = true
                                     _metroLinxErrorResponse.value = NO_DEPARTURE_INFO_MESSAGE
-                                }
-                            }
-                        }
-
-                        is ResultWrapper.FAILURE -> {
-                            withContext(Dispatchers.Main) {
-                                isLoading.value = false
-                                isError.value = true
-                                _metroLinxErrorResponse.value = result.code
-                            }
-                        }
-                    }
-                }
-            }
-        } else {
-            _metroLinxErrorResponse.value = NO_NETWORK_ERROR_MESSAGE
-        }
-    }
-
-    internal fun fetchAllGoTrainStops() {
-        if (_isConnected.value == true) {
-            viewModelScope.launch {
-                repository.getAllGoTrainStops().collect { result ->
-                    when (result) {
-                        is ResultWrapper.LOADING -> {
-                            withContext(Dispatchers.Main) {
-                                isLoading.value = true
-                                isError.value = false
-                            }
-                        }
-
-                        is ResultWrapper.SUCCESS -> {
-                            withContext(Dispatchers.Main) {
-                                isLoading.value = false
-                                isError.value = false
-                                result.value?.stations?.let { stations ->
-                                    stationList.addAll(stations.station)
                                 }
                             }
                         }
