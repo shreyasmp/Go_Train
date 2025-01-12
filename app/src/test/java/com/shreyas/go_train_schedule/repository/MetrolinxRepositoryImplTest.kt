@@ -72,7 +72,7 @@ class MetrolinxRepositoryImplTest {
         // Assert
         assertEquals(ResultWrapper.LOADING(true), result[0])
         assertEquals(ResultWrapper.LOADING(false), result[1])
-        assertEquals(ResultWrapper.FAILURE(null), result[2])
+        assertEquals(ResultWrapper.FAILURE("Response.error()"), result[2])
     }
 
     @Test
@@ -110,7 +110,7 @@ class MetrolinxRepositoryImplTest {
         // Assert
         assertEquals(ResultWrapper.LOADING(true), result[0])
         assertEquals(ResultWrapper.LOADING(false), result[1])
-        assertEquals(ResultWrapper.FAILURE(null), result[2])
+        assertEquals(ResultWrapper.FAILURE("Response.error()"), result[2])
     }
 
     @Test
@@ -148,6 +148,6 @@ class MetrolinxRepositoryImplTest {
         // Assert
         assertEquals(ResultWrapper.LOADING(true), result[0])
         assertEquals(ResultWrapper.LOADING(false), result[1])
-        assertEquals(ResultWrapper.FAILURE(null), result[2])
+        assertEquals(ResultWrapper.FAILURE("Response.error()"), result[2])
     }
 }
