@@ -18,7 +18,7 @@ class MainActivityTest {
     @Test
     fun testBottomNavigationBar() {
         // Check if the Home screen is displayed by default
-        composeTestRule.onNodeWithText(composeTestRule.activity.getString(R.string.title_home))
+        composeTestRule.onNodeWithText(composeTestRule.activity.getString(R.string.title_arrivals))
             .assertExists()
 
         // Navigate to Departures screen

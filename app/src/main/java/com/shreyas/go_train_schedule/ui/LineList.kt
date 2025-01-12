@@ -25,13 +25,16 @@ fun LineList(
     stationList: MutableList<Station>,
     lineList: MutableList<Trip>?,
 ) {
+
+    val unionTrips = lineList?.filter { it.lastStopCode == "UN" }?.sortedBy { it.endTime }
+
     LazyColumn(
         modifier = Modifier.padding(paddingValues),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        lineList?.sortedBy { it.endTime }?.let { sortedTrips ->
-            items(sortedTrips) { trip ->
+        unionTrips?.let { sortedUnionTrips ->
+            items(sortedUnionTrips) { trip ->
                 trip.display?.let {
                     LineCard(
                         trip = trip,

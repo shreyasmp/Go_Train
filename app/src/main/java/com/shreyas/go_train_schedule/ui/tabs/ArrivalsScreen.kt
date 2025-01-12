@@ -27,7 +27,7 @@ import com.shreyas.go_train_schedule.viewmodel.MetrolinxViewModel
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun HomeScreen(
+fun ArrivalsScreen(
     viewModel: MetrolinxViewModel,
     navController: NavController,
 ) {

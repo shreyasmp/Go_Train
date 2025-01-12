@@ -32,10 +32,10 @@ fun MainScreen(viewModel: MetrolinxViewModel) {
     ) { innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = "home",
+            startDestination = "arrivals",
             modifier = Modifier.padding(innerPadding)
         ) {
-            composable("home") { HomeScreen(viewModel, navController) }
+            composable("arrivals") { ArrivalsScreen(viewModel, navController) }
             composable("departures") { DeparturesScreen(viewModel) }
             composable("pricing") { FarePriceScreen(viewModel) }
             composable("info") { InfoScreen() }
